@@ -10,4 +10,4 @@ Make sure you have the packages from ```package-list.txt```. The install script 
 Run install.sh
 
 ## Uninstall
-There is currently no uninstall. You can simply delete any dotfiles you are no longer using.
+There is currently no uninstall. You can simply delete any files you are no longer using.
