@@ -39,7 +39,6 @@ fi
 # Setup symlinks using stow
 echo "Calling 'stow' within directoires to symlink..."
 cd $DIR/.config # Cd into dotfile config
-pwd
 stow .
 cd $DIR # Cd back out
 
