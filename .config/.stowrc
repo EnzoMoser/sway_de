@@ -1,3 +1,4 @@
 --target=$XDG_CONFIG_HOME
 --no-folding
 --verbose=1
+-n
