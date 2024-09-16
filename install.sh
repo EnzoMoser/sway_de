@@ -27,6 +27,8 @@ fi
 
 echo "Calling 'stow' within directoires to symlink..."
 # Setup symlinks using stow
-stow .config
+cd .config
+stow .
+cd ..
 
 echo "DONE!!!"
