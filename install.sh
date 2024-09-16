@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 set -eo pipefail # Exit if any command fails. Print command.
 
+# Get the correct location for this file.
+SOURCE=${BASH_SOURCE[0]}
+while [ -L "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+  SOURCE=$(readlink "$SOURCE")
+  [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+
 echo "Checking if command 'pacman' exists..."
 # If the command pacman exists, use it to install packages.
 if command -v pacman &> /dev/null; then
@@ -27,8 +36,8 @@ fi
 
 echo "Calling 'stow' within directoires to symlink..."
 # Setup symlinks using stow
-cd .config
+cd $DIR/.config # Cd into dotfile config
 stow .
-cd ..
+cd $DIR # Cd back out
 
 echo "DONE!!!"
