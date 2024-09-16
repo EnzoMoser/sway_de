@@ -16,7 +16,7 @@ echo "Checking if command 'pacman' exists..."
 if command -v pacman &> /dev/null; then
   echo "pacman exists! Installing packages..."
   # Return space separated list of packages.
-  export essential_pkg=$(awk -F '#' 'BEGIN{OFS="#";} { if (!/#/) ;else $NF="";print $0}' $DIR/package-list.txt | sed -n 's/#$//g;p' | grep -v "^$" | tr '\n' ' ')
+  essential_pkg=$(awk -F '#' 'BEGIN{OFS="#";} { if (!/#/) ;else $NF="";print $0}' $DIR/package-list.txt | sed -n 's/#$//g;p' | grep -v "^$" | tr '\n' ' ')
   sudo pacman -S --needed --noconfirm $essential_pkg
 else
   # Otherwise, ask if script should continue.
