@@ -9,5 +9,8 @@ Make sure you have the packages from ```package-list.txt```. The install script 
 ## Install
 Run install.sh
 
+## Usage
+There is no login manager. Type ```sway``` in the terminal to start a sway session.
+
 ## Uninstall
 There is currently no uninstall. You can simply delete any files you are no longer using.
