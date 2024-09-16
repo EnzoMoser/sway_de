@@ -4,7 +4,7 @@ This is my current desktop environment setup for the sway window manager. Credit
 ## Prerequisites
 **WARNING! You must backup your files yourself!!!** This script does **not** backup on your behalf.
 
-Make sure you have the packages from '''package-list.txt'''. The install script will automatically install them if you use Arch. Otherwise, find the equivalent package for your distro and install manually before running the script.
+Make sure you have the packages from ```package-list.txt```. The install script will automatically install them if you use Arch. Otherwise, find the equivalent package for your distro and install manually before running the script.
 
 ## Install
 Run install.sh
