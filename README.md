@@ -28,7 +28,7 @@ $ cd $SOME_PATH/sway_de/.config/
 $ stow --delete .
 ```
 
-To remove invalid symbolic links (for when you change the directory for ```sway_de``` and now all symbolic links point to path that no longer exists. They need to be deleted with this command and only then added back using the install script or ```stow```):
+To remove invalid symbolic links (for when you change the directory for ```sway_de``` and now all symbolic links point to a path that no longer exists. They need to be deleted with this command and only then added back using the install script or ```stow```):
 ```console
 $ find ~/.config/ -xtype l -exec rm {} +
 ```
