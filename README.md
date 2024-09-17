@@ -12,23 +12,23 @@ Run install.sh
 ## Usage
 There is no login manager. Type ```sway``` in the terminal to start a sway session.
 
-This setup creates symbolic links from the ```sway_de/.config/``` folder to your ```$HOME/.config/``` using [GNU Stow](https://www.gnu.org/software/stow/). It is recommended you read the man pages ```man stow``` or for more information, ```info stow```.
+This setup creates symbolic links from the ```$SOME_PATH/sway_de/.config/``` folder to your ```$HOME/.config/``` (replace ```$SOME_PATH``` with whichever directory you placed ```sway_de/``` in). Symbolic links are managed using [GNU Stow](https://www.gnu.org/software/stow/). It is recommended you read the man pages ```man stow```, or for more information ```info stow```.
 
-You can use all the ```stow``` commands when inside ```sway_de/.config/```. For example:
+You can use all the ```stow``` commands when inside ```$SOME_PATH/sway_de/.config/```. For example:
 
-To sync symbolic links from ```$HOME/.config/``` pointing to ```sway_de/.config/```:
+To sync symbolic links from ```$HOME/.config/``` pointing to ```$SOME_PATH/sway_de/.config/```:
 ```console
-$ cd sway_de/.config/
+$ cd $SOME_PATH/sway_de/.config/
 $ stow --restow .
 ```
 
-To remove all valid symbolic links from ```$HOME/.config/``` pointing to ```sway_de/.config/```:
+To remove all valid symbolic links from ```$HOME/.config/``` pointing to ```$SOME_PATH/sway_de/.config/```:
 ```console
-$ cd sway_de/.config/
+$ cd $SOME_PATH/sway_de/.config/
 $ stow --delete .
 ```
 
-To remove invalid symbolic links (for when you change the path for ```sway_de``` and now all symbolic links point to path that no longer exists. They need to be deleted with this command and only then added back using the install script or ```stow```.):
+To remove invalid symbolic links (for when you change the directory for ```sway_de``` and now all symbolic links point to path that no longer exists. They need to be deleted with this command and only then added back using the install script or ```stow```.):
 ```console
 $ find ~/.config/ -xtype l -exec rm {} +
 ```
